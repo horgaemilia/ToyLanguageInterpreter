@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RunController">
+  <columnConstraints>
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="307.2000030517578" minWidth="10.0" prefWidth="151.40001220703124" />
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="328.80002441406253" minWidth="9.599996948242222" prefWidth="147.39998779296872" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="228.79998779296875" minWidth="10.0" prefWidth="183.99998168945308" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="166.80001831054688" minWidth="10.0" prefWidth="166.80001831054688" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="166.80001831054688" minWidth="10.0" prefWidth="166.80001831054688" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+    <RowConstraints maxHeight="313.6000122070312" minHeight="10.0" prefHeight="266.4" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="169.59998168945313" minHeight="10.0" prefHeight="45.39998779296877" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="249.7999755859375" minHeight="10.0" prefHeight="249.7999755859375" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="230.4000122070313" minHeight="10.0" prefHeight="86.60002441406249" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="Heap_Table" prefHeight="314.0" prefWidth="102.0" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="Adress_Column" prefWidth="75.0" text="Adress" />
+          <TableColumn fx:id="Value_Column" prefWidth="75.0" text="Value" />
+        </columns>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TableView>
+      <TableView fx:id="Symbol_Table" prefHeight="314.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="3">
+        <columns>
+          <TableColumn fx:id="Name_Column" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="Sym_Value_Column" prefWidth="75.0" text="Value" />
+        </columns>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TableView>
+      <ListView fx:id="Execution_Stack" prefHeight="233.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </ListView>
+      <ListView fx:id="Output_List" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="3">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </ListView>
+      <ListView fx:id="Program_States" onMouseClicked="#HandleProgram" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ListView>
+      <ListView fx:id="File_Table" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.rowSpan="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ListView>
+      <Label text="Symbol Table" GridPane.columnIndex="1" />
+      <Label text="Heap" />
+      <Label text="Output_List" GridPane.columnIndex="3" />
+      <Label text="Execution Stack" GridPane.columnIndex="2" />
+      <Label text="File Table" GridPane.columnIndex="4" />
+      <Label text="Program States" GridPane.rowIndex="2" />
+      <GridPane GridPane.columnSpan="2" GridPane.rowIndex="4">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Number of Program States" />
+            <TextField fx:id="Program_States_Number" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="Back_to_menu" mnemonicParsing="false" onAction="#CloseProgram" prefHeight="26.0" prefWidth="106.0" text="Back To Menu" GridPane.columnIndex="1" />
+            <Button fx:id="One_Step" mnemonicParsing="false" onAction="#OneStep" prefHeight="26.0" prefWidth="115.0" text="One Step" />
+         </children>
+      </GridPane>
+   </children>
+</GridPane>
